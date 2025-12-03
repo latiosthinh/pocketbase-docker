@@ -5,4 +5,10 @@ services:
       - "56555:8080"
     volumes:
       - ./pb_data:/pb/pb_data
+      - ./pb_hooks:/pb/pb_hooks
+    environment:
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+    env_file:
+      - .env
     restart: unless-stopped
